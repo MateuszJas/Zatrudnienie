@@ -11,26 +11,28 @@ namespace Zatrudnienie
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Który  wariant pracy wybierasz, a - stawka progresywna czy b - 50zł za godzinę?");
+            Console.WriteLine("Który  wariant pracy wybierasz, a - stawka progresywna, czy b - 50zł za godzinę?");
             string odpowiedz = Console.ReadLine();
 
             Console.WriteLine("Ile godzin?");
             int godz = System.Convert.ToInt32(Console.ReadLine());
 
-            double stawka = 0.45;
+            double a = 0.45;
             double wynagrodzenie;
 
-            if (odpowiedz == "b")
-            {
-
-                int b = 50;
-
-                int wynagrodzenieA = godz * b;
-
-                Console.WriteLine("Wypłata = {0:C} ", wynagrodzenieA);
-            }
+            int b = 50;
             int r = godz - 1;
-            if (odpowiedz == "a" || godz != 1)
+
+
+            if (odpowiedz == "b") // stawka 50 zł
+            {
+                                
+                int wynagrodzenieB = godz * b;
+
+                Console.WriteLine("Wypłata = {0:C} ", wynagrodzenieB);
+            }
+            
+            if (odpowiedz == "a" & godz != 1) // stawka progresywna 0.45zł
             {
 
                 while (r != 0)
@@ -39,19 +41,20 @@ namespace Zatrudnienie
                     r--;
 
 
-                    wynagrodzenie = stawka * 2;
-                    stawka = wynagrodzenie;
+                    wynagrodzenie = a * 2;
+                    a = wynagrodzenie;
 
                     if (r == 0)
                         Console.WriteLine("Wypłata = {0:C} ", wynagrodzenie);
 
                 }
 
+                if (godz == 1)
+                {
+                    Console.WriteLine("Wypłata = {0:C} ", a);
+                }
             }
-            if (godz == 1)
-            {
-                Console.WriteLine("Wypłata = {0:C} ", stawka);
-            }
+            
 
             
             Console.ReadKey();
