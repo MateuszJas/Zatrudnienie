@@ -25,31 +25,22 @@ namespace Zatrudnienie
 
 
             if (odpowiedz == "b") // stawka 50 zł
-            {
-                                
+            {                           
                 int wynagrodzenieB = godz * b;
-
                 Console.WriteLine("Wypłata = {0:C} ", wynagrodzenieB);
             }
             
             if (odpowiedz == "a" & godz != 1) // stawka progresywna 0.45zł
             {
-
                 while (r != 0)
                 {
-
                     r--;
-
-
                     wynagrodzenie = a * 2;
                     a = wynagrodzenie;
-
                     if (r == 0)
-                        Console.WriteLine("Wypłata = {0:C} ", wynagrodzenie);
-
+                       Console.WriteLine("Wypłata = {0:C} ", wynagrodzenie);
                 }
-
-              
+                              
             }
             if (odpowiedz == "a" & godz == 1)
 
