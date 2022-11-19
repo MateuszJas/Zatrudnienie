@@ -49,14 +49,14 @@ namespace Zatrudnienie
 
                 }
 
-                if (godz == 1)
-                {
-                    Console.WriteLine("Wypłata = {0:C} ", a);
-                }
+              
             }
-            
+            if (odpowiedz == "a" & godz == 1)
 
-            
+            {
+                Console.WriteLine("Wypłata = {0:C} ", a);
+            }
+
             Console.ReadKey();
 
         }
